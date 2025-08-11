@@ -1213,6 +1213,7 @@
     <header id="header">
         <div class="logo">Bonacci<span>Trades</span></div>
         <nav class="nav-links">
+            <a href="#hero">Home</a>
             <a href="#features">Features</a>
             <a href="#courses">Courses</a>
             <a href="#testimonials">Success</a>
@@ -1225,7 +1226,7 @@
     </header>
     
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge animate__animated animate__fadeIn">
@@ -1532,7 +1533,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2023 Bonaccitrades. All rights reserved. | Designed for Kenyan traders</p>
+<p>&copy; <script>document.write(new Date().getFullYear())</script> Bonaccitrades. All rights reserved. | Designed for Kenyan traders</p>
+
         </div>
     </footer>
     
@@ -1644,7 +1646,7 @@
                     wordIndex = (wordIndex + 1) % words.length;
                     setTimeout(type, 500);
                 } else {
-                    const speed = isDeleting ? 50 : 300;
+                    const speed = isDeleting ? 50 : 150;
                     setTimeout(type, speed);
                 }
             }
