@@ -1459,32 +1459,38 @@
                 </div>
             </div>
             
-            <div class="contact-form animate-on-scroll">
-                <form id="signup-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" placeholder="Enter your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="e.g. +254 787 445446" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">Your Trading Level</label>
-                        <select id="experience" required>
-                            <option value="">Select your level</option>
-                            <option value="beginner">Beginner</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="submit-btn">Start Free Trial <i class="fas fa-arrow-right"></i></button>
-                </form>
-            </div>
+          <!-- Replace your existing form with this -->
+<div class="contact-form animate-on-scroll">
+    <form id="signup-form" action="https://formsubmit.co/bencoder9@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Signup from BonacciTrades">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> <!-- Replace with your thank you page URL -->
+        <input type="hidden" name="_captcha" value="false">
+        
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. +254 787 445446" required>
+        </div>
+        <div class="form-group">
+            <label for="experience">Your Trading Level</label>
+            <select id="experience" name="experience" required>
+                <option value="">Select your level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+        </div>
+        <button type="submit" class="submit-btn">Start Free Trial <i class="fas fa-arrow-right"></i></button>
+    </form>
+</div>
         </div>
     </section>
     
@@ -1676,16 +1682,6 @@
             
             setInterval(animatePrices, 3000);
         });
-        
-        // Form submission
-        $('#signup-form').on('submit', function(e) {
-            e.preventDefault();
-            // Here you would typically send the form data to your server
-            alert('Thank you for your interest! We will contact you shortly.');
-            $(this).trigger('reset');
-        });
-        
-
         // Mobile menu toggle
         $('.mobile-menu-btn').on('click', function() {
             $('.nav-links').toggleClass('active');
