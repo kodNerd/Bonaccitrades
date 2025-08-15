@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bonacci Trades - Learn Trading Online</title>
+    <!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ccircle cx='64' cy='64' r='60' fill='white'/%3E%3Ctext x='64' y='88' font-size='80' font-family='Arial, sans-serif' font-weight='bold' text-anchor='middle' fill='%230d6efd'%3EB%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+
+<!-- Fallback PNG favicon -->
+<link rel="alternate icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -584,50 +592,204 @@
         <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Trading charts" class="hero-bg d-none d-lg-block">
     </section>
 
-    <!-- Categories Section -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">Top categories</h2>
-            <div class="row g-4">
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="category-card p-3 text-center">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Stock Trading" class="category-img mb-3">
-                        <h5>Stock Trading</h5>
+  <!-- Adrenaline Rush Categories Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);">
+    <div class="container">
+        <h2 class="section-title text-center text-white mb-5">Choose Your Trading Battlefield</h2>
+        
+        <div class="row g-4 justify-content-center">
+            <!-- Stock Trading - "Bull Charge" -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="category-card position-relative overflow-hidden" style="height: 200px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
+                    <div class="category-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);"></div>
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" 
+                         alt="Stock Trading" 
+                         class="h-100 w-100 object-fit-cover">
+                    <div class="position-absolute bottom-0 start-0 p-3 w-100">
+                        <h5 class="text-white mb-0">Stock Trading</h5>
+                        <small class="text-warning fw-bold">BULL CHARGE</small>
+                    </div>
+                    <div class="position-absolute top-0 end-0 p-2">
+                        <span class="badge bg-danger pulse">HOT</span>
                     </div>
                 </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="category-card p-3 text-center">
-                        <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Forex Trading" class="category-img mb-3">
-                        <h5>Forex Trading</h5>
+            </div>
+            
+            <!-- Forex Trading - "Currency Storm" -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="category-card position-relative overflow-hidden" style="height: 200px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
+                    <div class="category-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);"></div>
+                    <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" 
+                         alt="Forex Trading" 
+                         class="h-100 w-100 object-fit-cover">
+                    <div class="position-absolute bottom-0 start-0 p-3 w-100">
+                        <h5 class="text-white mb-0">Forex Trading</h5>
+                        <small class="text-info fw-bold">CURRENCY STORM</small>
+                    </div>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <div class="spinner-grow text-light" style="width: 3rem; height: 3rem; opacity: 0.3;" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="category-card p-3 text-center">
-                        <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Crypto Trading" class="category-img mb-3">
-                        <h5>Crypto Trading</h5>
+            </div>
+            
+            <!-- Crypto Trading - "Digital Gold Rush" -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="category-card position-relative overflow-hidden" style="height: 200px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
+                    <div class="category-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);"></div>
+                    <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" 
+                         alt="Crypto Trading" 
+                         class="h-100 w-100 object-fit-cover">
+                    <div class="position-absolute bottom-0 start-0 p-3 w-100">
+                        <h5 class="text-white mb-0">Crypto Trading</h5>
+                        <small class="text-success fw-bold">DIGITAL GOLD RUSH</small>
+                    </div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100" style="pointer-events: none;">
+                        <div class="floating-coins">
+                            <span class="position-absolute" style="top: 20%; left: 30%;">₿</span>
+                            <span class="position-absolute" style="top: 40%; left: 70%;">Ξ</span>
+                            <span class="position-absolute" style="top: 70%; left: 20%;">$</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="category-card p-3 text-center">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Options Trading" class="category-img mb-3">
-                        <h5>Options Trading</h5>
+            </div>
+            
+            <!-- Options Trading - "Time Bomb" -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="category-card position-relative overflow-hidden" style="height: 200px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
+                    <div class="category-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);"></div>
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" 
+                         alt="Options Trading" 
+                         class="h-100 w-100 object-fit-cover">
+                    <div class="position-absolute bottom-0 start-0 p-3 w-100">
+                        <h5 class="text-white mb-0">Options Trading</h5>
+                        <small class="text-danger fw-bold">TIME BOMB</small>
+                    </div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style="pointer-events: none;">
+                        <div class="countdown-timer" style="font-size: 2rem; font-weight: bold; color: rgba(255,255,255,0.2);">00:00:00</div>
                     </div>
                 </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="category-card p-3 text-center">
-                        <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Day Trading" class="category-img mb-3">
-                        <h5>Day Trading</h5>
+            </div>
+            
+            <!-- Day Trading - "Speed Run" -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="category-card position-relative overflow-hidden" style="height: 200px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
+                    <div class="category-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);"></div>
+                    <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" 
+                         alt="Day Trading" 
+                         class="h-100 w-100 object-fit-cover">
+                    <div class="position-absolute bottom-0 start-0 p-3 w-100">
+                        <h5 class="text-white mb-0">Day Trading</h5>
+                        <small class="text-primary fw-bold">SPEED RUN</small>
+                    </div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100" style="pointer-events: none;">
+                        <div class="speed-lines">
+                            <div class="position-absolute bg-white" style="height: 2px; width: 100%; top: 30%; opacity: 0.3; transform: rotate(-5deg);"></div>
+                            <div class="position-absolute bg-white" style="height: 2px; width: 100%; top: 60%; opacity: 0.3; transform: rotate(5deg);"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-4 col-lg-2">
-                    <div class="category-card p-3 text-center">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Swing Trading" class="category-img mb-3">
-                        <h5>Swing Trading</h5>
+            </div>
+            
+            <!-- Swing Trading - "Wave Rider" -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="category-card position-relative overflow-hidden" style="height: 200px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease;">
+                    <div class="category-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);"></div>
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" 
+                         alt="Swing Trading" 
+                         class="h-100 w-100 object-fit-cover">
+                    <div class="position-absolute bottom-0 start-0 p-3 w-100">
+                        <h5 class="text-white mb-0">Swing Trading</h5>
+                        <small class="text-warning fw-bold">WAVE RIDER</small>
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 w-100" style="height: 30%; pointer-events: none;">
+                        <div class="waves">
+                            <svg viewBox="0 0 500 100" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+                                <path d="M0,50 C150,100 350,0 500,50 L500,100 L0,100 Z" style="stroke: none; fill: rgba(255,255,255,0.1);"></path>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+    /* Pulse animation for hot badges */
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    .pulse {
+        animation: pulse 1.5s infinite;
+    }
+    
+    /* Floating coins animation */
+    .floating-coins span {
+        animation: float 4s infinite ease-in-out;
+        font-size: 1.5rem;
+        opacity: 0.7;
+    }
+    .floating-coins span:nth-child(1) { animation-delay: 0s; }
+    .floating-coins span:nth-child(2) { animation-delay: 1s; }
+    .floating-coins span:nth-child(3) { animation-delay: 2s; }
+    
+    @keyframes float {
+        0% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(10deg); }
+        100% { transform: translateY(0) rotate(0deg); }
+    }
+    
+    /* Hover effects */
+    .category-card:hover {
+        transform: translateY(-10px) !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important;
+    }
+    
+    /* Mobile optimizations */
+    @media (max-width: 767.98px) {
+        .category-card {
+            height: 150px !important;
+        }
+        .section-title {
+            font-size: 1.8rem !important;
+        }
+    }
+</style>
+
+<script>
+    // Simple countdown timer effect for options trading
+    document.addEventListener('DOMContentLoaded', function() {
+        const countdownElements = document.querySelectorAll('.countdown-timer');
+        
+        countdownElements.forEach(el => {
+            let seconds = 0;
+            setInterval(() => {
+                seconds++;
+                const hours = Math.floor(seconds / 3600).toString().padStart(2, '0');
+                const mins = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+                const secs = (seconds % 60).toString().padStart(2, '0');
+                el.textContent = `${hours}:${mins}:${secs}`;
+            }, 1000);
+        });
+        
+        // Add click effects
+        const cards = document.querySelectorAll('.category-card');
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                    // In a real implementation, this would navigate to the category page
+                    alert(`Entering ${this.querySelector('h5').textContent} arena!`);
+                }, 200);
+            });
+        });
+    });
+</script>
 
     <!-- Featured Courses -->
     <section class="py-5">
