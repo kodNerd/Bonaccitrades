@@ -3,1730 +3,1325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nairobi Forex Academy | AI-Powered Trading Education</title>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Bonacci Trades - Learn Trading Online</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #1A4B8C;
-            --secondary: #D4AF37;
-            --accent: #5CC8D7;
-            --bg: #F5F7FA;
-            --text: #2D3748;
-            --soft-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            --card-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-        }.no-scroll {
-            overflow: hidden;
-            position: fixed;
-            width: 100%;}
+            --primary-color: #5624d0;
+            --secondary-color: #f7f9fa;
+            --accent-color: #a435f0;
+            --dark-color: #1c1d1f;
+            --light-color: #fff;
+            --border-color: #d1d7dc;
+        }
         
         * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
             font-family: 'Space Grotesk', sans-serif;
         }
         
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
-            line-height: 1.6;
-            font-size: 14px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, #0D2B4E 100%);
-            color: white;
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-            box-shadow: var(--soft-shadow);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            padding: 1rem 0;
         }
         
-        header.scrolled {
-            padding: 0.8rem 5%;
-            background: rgba(26, 75, 140, 0.98);
-            backdrop-filter: blur(8px);
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary-color);
         }
         
-        .logo {
-            font-weight: 700;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
+        .nav-link {
             font-weight: 500;
-            position: relative;
-            font-size: 0.9rem;
-            transition: var(--transition);
+            padding: 0.5rem 1rem;
         }
         
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary);
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
+        .hero-section {
+            background-color: var(--primary-color);
             color: white;
-            font-size: 1.3rem;
-            cursor: pointer;
-            z-index: 101;
-        }
-        
-        /* Hero Section - Modern Redesign */
-        .hero {
-            height: 100vh;
-            min-height: 800px;
-            background: linear-gradient(135deg, #0D2B4E 0%, #1A4B8C 100%);
-            color: white;
+            padding: 4rem 0;
             position: relative;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.15;
-            z-index: 0;
-        }
-
-        .hero-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
+        
+        .hero-content {
             position: relative;
             z-index: 2;
         }
-
-        .hero-content {
-            position: relative;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, rgba(92, 200, 215, 0.15) 100%);
-            color: #D4AF37;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.8rem;
-            margin-bottom: 1.2rem;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .pulse-effect {
+        
+        .hero-bg {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(212, 175, 55, 0.2);
-            border-radius: 30px;
-            animation: pulse 2s infinite;
-            z-index: -1;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.5); opacity: 0; }
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #D4AF37 0%, #5CC8D7 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero p {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .hero-cta {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(90deg, #D4AF37 0%, #E8C352 100%);
-            color: #1A4B8C;
-            padding: 10px 24px;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            position: relative;
-            overflow: hidden;
-            font-size: 0.85rem;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-        }
-
-        .arrow-wrapper {
-            width: 20px;
-            height: 20px;
-            background: rgba(26, 75, 140, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            font-size: 0.7rem;
-        }
-
-        .cta-button:hover .arrow-wrapper {
-            transform: translateX(3px);
-            background: rgba(26, 75, 140, 0.3);
-        }
-
-        .video-preview {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 0.85rem;
-        }
-
-        .video-preview:hover {
-            color: #D4AF37;
-        }
-
-        .play-icon {
-            width: 30px;
-            height: 30px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            font-size: 0.8rem;
-        }
-
-        .video-preview:hover .play-icon {
-            background: #D4AF37;
-            color: #1A4B8C;
-            transform: scale(1.1);
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .screen-container {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            transform-style: preserve-3d;
-        }
-
-        .screen-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 12px;
-        }
-
-        .screen-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(26, 75, 140, 0.3) 0%, rgba(13, 43, 78, 0.5) 100%);
-        }
-
-        /* Market Ticker */
-        .market-ticker {
-            position: absolute;
-            bottom: 30px;
-            left: 0;
             right: 0;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-            padding: 12px 5%;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .ticker-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 500;
-            font-size: 0.8rem;
-        }
-
-        .ticker-item.highlight {
-            color: #D4AF37;
-        }
-
-        .price-up {
-            color: #4CAF50;
-        }
-
-        .price-down {
-            color: #F44336;
-        }
-
-        /* Typing Animation */
-        .typed-text {
-            position: relative;
-            display: inline-block;
-        }
-
-        .typed-text::after {
-            content: '|';
-            position: absolute;
-            right: -6px;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /* Rest of your existing styles... */
-        /* Features Section */
-        .features {
-            padding: 6rem 5%;
-            text-align: center;
-            position: relative;
-        }
-        
-        .features::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            bottom: 0;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1620228885847-9eab2a1adddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.03;
-            z-index: -1;
+            opacity: 0.2;
         }
         
-        .section-title {
-            color: var(--primary);
-            margin-bottom: 3rem;
-            font-size: 1.8rem;
-            position: relative;
-            display: inline-block;
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
         
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--secondary);
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
         }
         
-        .section-subtitle {
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            color: #666;
-            font-size: 0.95rem;
+        .search-bar {
+            max-width: 600px;
         }
         
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .search-input {
+            padding: 1rem;
+            border-radius: 0;
+            border: none;
         }
         
-        .feature-card {
-            background: white;
-            padding: 2rem 1.5rem;
-            border-radius: 12px;
-            box-shadow: var(--soft-shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            text-align: center;
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--secondary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--card-shadow);
-        }
-        
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .feature-icon {
-            font-size: 2.2rem;
-            color: var(--secondary);
-            margin-bottom: 1.2rem;
-            transition: var(--transition);
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 70px;
-            height: 70px;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 50%;
-        }
-        
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-            background: rgba(212, 175, 55, 0.2);
-        }
-        
-        .feature-card h3 {
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-        
-        .feature-card p {
-            color: #666;
-            font-size: 0.85rem;
-        }
-        
-        /* Course Preview */
-        .courses {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--primary) 0%, #0D2B4E 100%);
+        .search-btn {
+            background-color: var(--accent-color);
             color: white;
-            position: relative;
-            overflow: hidden;
+            border: none;
+            padding: 0 1.5rem;
+            font-weight: bold;
         }
         
-        .courses::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(92, 200, 215, 0.1);
-            border-radius: 50%;
-            filter: blur(30px);
+        .category-card {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            height: 100%;
         }
         
-        .courses::after {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 50%;
-            filter: blur(30px);
+        .category-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
-        .course-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .course-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
+        .category-img {
+            height: 120px;
+            object-fit: cover;
+            width: 100%;
         }
         
         .course-card {
-            background: white;
-            color: var(--text);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
         }
         
         .course-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
         }
         
-        .course-image {
+        .course-img {
             height: 180px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .course-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            height: 42px;
             overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .instructor-name {
+            color: #6a6f73;
+            font-size: 0.85rem;
+        }
+        
+        .rating {
+            color: #b4690e;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .rating-count {
+            color: #6a6f73;
+            font-size: 0.85rem;
+        }
+        
+        .price {
+            font-weight: 700;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #6a6f73;
+            font-size: 0.9rem;
+        }
+        
+        .discount-badge {
+            background-color: #ffe799;
+            color: #593d00;
+            font-weight: bold;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer {
+            background-color: #1c1d1f;
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .language-btn {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .copyright {
+            font-size: 0.8rem;
+            color: #a5a5a7;
+        }
+        
+        .bestseller-badge {
+            background-color: #ffe799;
+            color: #593d00;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.25rem 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Dropdown on hover */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0; /* remove the gap so it doesn't close */
+        }
+        
+        /* Make the dropdown menu appear immediately */
+        .dropdown-menu {
+            border-top: none;
+            transition: all 0s ease 0s !important;
+        }
+        
+        /* Optional: Add animation for smoother appearance */
+        @media (min-width: 992px) {
+            .dropdown-menu {
+                animation: fadeIn 0.2s ease-out;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+        
+        /* Offcanvas styles */
+        .offcanvas-header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+        }
+        
+        .offcanvas-body {
+            padding: 1rem 1.5rem;
+        }
+        
+        .offcanvas-search {
+            margin-bottom: 1rem;
+        }
+        
+        .mobile-nav-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--dark-color);
+            text-decoration: none;
+        }
+        
+        .mobile-nav-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+        }
+        
+        .mobile-nav-icons a {
+            color: var(--dark-color);
+            font-size: 1.25rem;
+        }
+        
+        /* Mobile dropdown styles */
+        .mobile-nav-item .dropdown-toggle {
             position: relative;
         }
         
-        .course-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
+        .mobile-nav-item .dropdown-arrow {
+            transition: transform 0.3s ease;
         }
         
-        .course-card:hover img {
-            transform: scale(1.1);
+        .mobile-nav-item .dropdown-toggle[aria-expanded="true"] .dropdown-arrow {
+            transform: rotate(90deg);
         }
         
-        .course-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+        .dropdown-menu-mobile {
+            padding: 0.5rem 0;
+            margin-left: 1rem;
+            border-left: 2px solid var(--primary-color);
+            animation: fadeIn 0.3s ease-out;
         }
         
-        .course-content h3 {
-            margin-bottom: 0.8rem;
-            color: var(--primary);
-            font-size: 1.1rem;
+        .dropdown-menu-mobile .dropdown-item {
+            padding: 0.5rem 1rem;
+            color: var(--dark-color);
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s ease;
         }
         
-        .course-content p {
-            color: #666;
-            margin-bottom: 1.2rem;
-            font-size: 0.85rem;
-            flex-grow: 1;
+        .dropdown-menu-mobile .dropdown-item:hover {
+            background-color: rgba(0,0,0,0.05);
+            padding-left: 1.25rem;
         }
         
-        .course-tag {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
+        .dropdown-menu-mobile .dropdown-header {
+            padding: 0.5rem 1rem;
             font-size: 0.75rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-            align-self: flex-start;
+            color: #6c757d;
+            text-transform: uppercase;
+            font-weight: 600;
         }
         
-        .course-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
+        .dropdown-menu-mobile .dropdown-divider {
+            height: 1px;
+            margin: 0.5rem 1rem;
+            background-color: var(--border-color);
+        }
+        
+        /* Popover styles */
+        .popover {
+            max-width: 320px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: none;
+            animation: fadeInUp 0.2s ease-out;
+        }
+        
+        .popover-header {
+            background-color: white;
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+        }
+        
+        .popover-body {
+            padding: 1rem;
+        }
+        
+        .course-badge {
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .popover-bestseller-badge {
+            background-color: #ffe799;
+            color: #593d00;
+        }
+        
+        .updated-text {
+            font-size: 0.8rem;
+            color: #6a6f73;
+            margin-bottom: 0.5rem;
         }
         
         .course-duration {
             font-size: 0.8rem;
-            color: #666;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            color: #6a6f73;
+            margin-bottom: 1rem;
         }
         
-        .course-duration i {
-            color: var(--secondary);
+        .course-features {
+            margin-bottom: 1rem;
+        }
+        
+        .course-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .course-feature i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
             font-size: 0.8rem;
         }
         
-        /* Stats Section */
-        .stats {
-            padding: 5rem 5%;
-            background: var(--bg);
-            text-align: center;
-            position: relative;
+        .course-feature-text {
+            font-size: 0.85rem;
+            line-height: 1.4;
         }
         
-        .stats::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1620228885847-9eab2a1adddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.03;
-            z-index: -1;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        
-        .stat-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: var(--soft-shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stat-item:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: var(--card-shadow);
-        }
-        
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--secondary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition);
-        }
-        
-        .stat-item:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .stat-number {
-            font-size: 2rem;
+        .popover-price {
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .stat-number::after {
-            content: '+';
-            position: absolute;
-            right: -12px;
-            top: 0;
-            color: var(--secondary);
-        }
-        
-        .stat-label {
-            color: #666;
-            font-size: 0.85rem;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 6rem 5%;
-            background: linear-gradient(rgba(26, 75, 140, 0.03), rgba(26, 75, 140, 0.03));
-            position: relative;
-        }
-        
-        .testimonial-slider {
-            max-width: 700px;
-            margin: 3rem auto 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--soft-shadow);
-            margin: 1rem;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .testimonial:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow);
-        }
-        
-        .testimonial::before {
-            content: '"';
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 4rem;
-            color: rgba(26, 75, 140, 0.1);
-            font-family: serif;
-            line-height: 1;
-        }
-        
-        .testimonial img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1rem;
-            display: block;
-            border: 3px solid var(--secondary);
-            transition: var(--transition);
-        }
-        
-        .testimonial:hover img {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 1.2rem;
-            position: relative;
-            z-index: 1;
-            font-size: 0.9rem;
-        }
-        
-        .testimonial h4 {
-            color: var(--primary);
-            font-size: 1rem;
-        }
-        
-        .testimonial .role {
-            color: var(--secondary);
-            font-size: 0.8rem;
-            margin-top: 0.3rem;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 6rem 5%;
-            background: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
-            background-size: cover;
-            position: relative;
-            color: white;
-        }
-        
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(26, 75, 140, 0.9);
-        }
-        
-        .contact-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .contact-info h2 {
-            margin-bottom: 1.2rem;
-            font-size: 1.8rem;
-        }
-        
-        .contact-info p {
-            margin-bottom: 1.8rem;
-            opacity: 0.9;
-            font-size: 0.95rem;
-        }
-        
-        .contact-details {
-            margin-top: 1.8rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.2rem;
-            transition: var(--transition);
-        }
-        
-        .contact-item:hover {
-            transform: translateX(5px);
-        }
-        
-        .contact-icon {
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
             font-size: 1.1rem;
-            color: var(--secondary);
-            transition: var(--transition);
         }
         
-        .contact-item:hover .contact-icon {
-            background: var(--secondary);
-            color: var(--text);
-        }
-        
-        .contact-text h4 {
-            margin-bottom: 0.3rem;
-            font-size: 0.95rem;
-        }
-        
-        .contact-text a {
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
+        .popover-original-price {
+            text-decoration: line-through;
+            color: #6a6f73;
             font-size: 0.9rem;
+            margin-left: 0.5rem;
         }
         
-        .contact-text a:hover {
-            color: var(--secondary);
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            transition: var(--transition);
+        /* Random direction for popovers */
+        .bs-popover-auto[data-popper-placement^="top"] > .popover-arrow::after, 
+        .bs-popover-top > .popover-arrow::after {
+            border-top-color: white;
         }
         
-        .contact-form:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow);
+        .bs-popover-auto[data-popper-placement^="bottom"] > .popover-arrow::after, 
+        .bs-popover-bottom > .popover-arrow::after {
+            border-bottom-color: white;
         }
         
-        .form-group {
-            margin-bottom: 1.2rem;
+        .bs-popover-auto[data-popper-placement^="left"] > .popover-arrow::after, 
+        .bs-popover-left > .popover-arrow::after {
+            border-left-color: white;
         }
         
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text);
-            font-size: 0.85rem;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            transition: var(--transition);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            border-color: var(--accent);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(92, 200, 215, 0.2);
-        }
-        
-        .submit-btn {
-            background: linear-gradient(90deg, #D4AF37 0%, #E8C352 100%);
-            color: var(--text);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 100%;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .submit-btn:hover {
-            background: linear-gradient(90deg, #c19e2e 0%, #d9b449 100%);
-            transform: translateY(-2px) scale(1.02);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 3rem 5% 1.5rem;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            text-align: left;
-        }
-        
-        .footer-column h3 {
-            color: var(--secondary);
-            margin-bottom: 1.2rem;
-            font-size: 1.1rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 35px;
-            height: 2px;
-            background: var(--secondary);
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 0.7rem;
-            transition: var(--transition);
-            font-size: 0.85rem;
-        }
-        
-        .footer-column ul li:hover {
-            transform: translateX(5px);
-        }
-        
-        .footer-column ul li a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .footer-column ul li a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 0.8rem;
-            margin-top: 1.2rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
-            font-size: 0.9rem;
-        }
-        
-        .social-links a:hover {
-            background: var(--secondary);
-            color: var(--text);
-            transform: translateY(-3px) scale(1.1);
-        }
-        
-        .footer-bottom {
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
-            opacity: 0.8;
-        }
-        
-        /* Animations */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info {
-                text-align: center;
-            }
-            
-            .contact-item {
-                justify-content: center;
-            }
-            
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2.5rem;
-            }
-            
-            .hero-image {
-                display: none;
-            }
-            
-            .hero-cta {
-                justify-content: center;
-            }
-            
-            .hero {
-                min-height: 700px;
-            }
-            
-            .market-ticker {
-                gap: 20px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                height: 100vh;
-                background: var(--primary);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: var(--transition);
-                z-index: 100;
-                backdrop-filter: blur(10px);
-            }
-            
-            .nav-links.active {
-                right: 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 0.95rem;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .course-cards {
-                grid-template-columns: 1fr;
-                max-width: 450px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .market-ticker {
-                bottom: 20px;
-                gap: 12px;
-                padding: 10px 5%;
-            }
-            
-            .hero-cta {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            
-            .hero-badge {
-                font-size: 0.75rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero {
-                min-height: 750px;
-            }
-            
-            .market-ticker {
-                gap: 10px;
-                justify-content: flex-start;
-                overflow-x: auto;
-                white-space: nowrap;
-                padding: 10px 5%;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-            
-            .market-ticker::-webkit-scrollbar {
-                display: none;
-            }
-            
-            .ticker-item {
-                font-size: 0.75rem;
-            }
-        }
-        
-        /* Mobile menu overlay */
-        .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-        
-        .mobile-menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
+        .bs-popover-auto[data-popper-placement^="right"] > .popover-arrow::after, 
+        .bs-popover-right > .popover-arrow::after {
+            border-right-color: white;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="logo">Bonacci<span>Trades</span></div>
-        <nav class="nav-links">
-            <a href="#hero">Home</a>
-            <a href="#features">Features</a>
-            <a href="#courses">Courses</a>
-            <a href="#testimonials">Success</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="mobile-menu-overlay"></div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge animate__animated animate__fadeIn">
-                    <span>Nairobi's #1 Forex Education</span>
-                    <div class="pulse-effect"></div>
-                </div>
-                
-                <h1 class="animate__animated animate__fadeInDown">
-                    <span class="gradient-text">AI-Powered</span> Trading Strategies<br>
-                    <span class="typed-text"></span>
-                </h1>
-                
-                <p class="animate__animated animate__fadeIn animate__delay-1s">
-                    Join 1,500+ Kenyan traders mastering the markets with our<br>
-                    localized signals and real-time KES pair analysis
-                </p>
-                
-                <div class="hero-cta animate__animated animate__fadeInUp animate__delay-2s">
-                    <a href="#contact" class="cta-button">
-                        <span>Start Free 7-Day Trial</span>
-                        <div class="arrow-wrapper">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </a>
-                    <a href="#" class="video-preview">
-                        <div class="play-icon">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <span>Watch Demo</span>
-                    </a>
-                </div>
-            </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bonacci Trades</a>
             
-            <div class="hero-image">
-                <div class="screen-container floating">
-                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trading Dashboard">
-                    <div class="screen-overlay"></div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Market Data Ticker -->
-        <div class="market-ticker">
-            <div class="ticker-item">
-                <span>USD/KES</span>
-                <div class="price-up">150.25 <i class="fas fa-caret-up"></i></div>
-            </div>
-            <div class="ticker-item">
-                <span>EUR/KES</span>
-                <div class="price-down">162.80 <i class="fas fa-caret-down"></i></div>
-            </div>
-            <div class="ticker-item highlight">
-                <i class="fas fa-bullhorn"></i>
-                <span>Live Session Today 8PM EAT</span>
-            </div>
-            <div class="ticker-item">
-                <span>GBP/KES</span>
-                <div class="price-up">190.45 <i class="fas fa-caret-up"></i></div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <h2 class="section-title">Why Traders Choose Us</h2>
-            <p class="section-subtitle">Experience the difference with our Kenyan-focused forex education platform</p>
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Real KES Analysis</h3>
-                    <p>Live tracking of Kenyan Shilling pairs with actionable insights</p>
-                </div>
-                <div class="feature-card animate-on-scroll" style="transition-delay: 0.2s;">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>AI Trade Signals</h3>
-                    <p>Smart alerts for optimal entry/exit points in Nairobi timezone</p>
-                </div>
-                <div class="feature-card animate-on-scroll" style="transition-delay: 0.4s;">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Anywhere Access</h3>
-                    <p>Full platform optimized for mobile trading on the go</p>
-                </div>
-                <div class="feature-card animate-on-scroll" style="transition-delay: 0.6s;">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Local Community</h3>
-                    <p>Private network of Kenyan traders sharing strategies</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Course Preview -->
-    <section class="courses" id="courses">
-        <div class="course-container">
-            <h2 class="section-title" style="color: white;">Popular Courses</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Start your trading journey with our most sought-after programs</p>
-            <div class="course-cards">
-                <div class="course-card animate-on-scroll">
-                    <div class="course-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Beginner Forex Course">
-                    </div>
-                    <div class="course-content">
-                        <span class="course-tag">Beginner</span>
-                        <h3>Forex Fundamentals</h3>
-                        <p>Master the basics of currency trading in 4 weeks with our comprehensive beginner program.</p>
-                        <div class="course-meta">
-                            <span class="course-duration"><i class="far fa-clock"></i> 4 Weeks</span>
-                            <a href="#" class="cta-button" style="padding: 6px 16px; font-size: 0.8rem;">Enroll Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-card animate-on-scroll" style="transition-delay: 0.2s;">
-                    <div class="course-image">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Advanced Strategies">
-                    </div>
-                    <div class="course-content">
-                        <span class="course-tag">Advanced</span>
-                        <h3>KES Pair Mastery</h3>
-                        <p>Specialized techniques for trading USD/KES, EUR/KES and other Kenyan currency pairs.</p>
-                        <div class="course-meta">
-                            <span class="course-duration"><i class="far fa-clock"></i> 6 Weeks</span>
-                            <a href="#" class="cta-button" style="padding: 6px 16px; font-size: 0.8rem;">Enroll Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-card animate-on-scroll" style="transition-delay: 0.4s;">
-                    <div class="course-image">
-                        <img src="https://images.unsplash.com/photo-1639754390580-2e7437267698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Risk Management">
-                    </div>
-                    <div class="course-content">
-                        <span class="course-tag">All Levels</span>
-                        <h3>Risk Management</h3>
-                        <p>Learn to protect your capital while maximizing profits with proper risk techniques.</p>
-                        <div class="course-meta">
-                            <span class="course-duration"><i class="far fa-clock"></i> 3 Weeks</span>
-                            <a href="#" class="cta-button" style="padding: 6px 16px; font-size: 0.8rem;">Enroll Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <h2 class="section-title">Our Impact</h2>
-            <p class="section-subtitle">Join a growing community of successful Kenyan traders</p>
-            <div class="stats-grid">
-                <div class="stat-item animate-on-scroll">
-                    <div class="stat-number" data-count="1500">0</div>
-                    <div class="stat-label">Traders Empowered</div>
-                </div>
-                <div class="stat-item animate-on-scroll" style="transition-delay: 0.2s;">
-                    <div class="stat-number" data-count="87">0</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-                <div class="stat-item animate-on-scroll" style="transition-delay: 0.4s;">
-                    <div class="stat-number" data-count="24">0</div>
-                    <div class="stat-label">Live Sessions Monthly</div>
-                </div>
-                <div class="stat-item animate-on-scroll" style="transition-delay: 0.6s;">
-                    <div class="stat-number" data-count="365">0</div>
-                    <div class="stat-label">Days Support</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2 class="section-title">Success Stories</h2>
-            <p class="section-subtitle">Hear from our community of traders</p>
-            <div class="testimonial-slider">
-                <div class="testimonial animate-on-scroll">
-                    <img src="https://i.postimg.cc/bYGtnJGW/Whats-App-Image-2025-08-11-at-15-37-47.jpg" alt="Student">
-                    <p>"After joining Bonaccitrades, my USD/KES trades became consistently profitable. The local market insights are game-changing!"</p>
-                    <h4>Basweti B.</h4>
-                    <div class="role">Nairobi, 2 years with us</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2>Ready to Transform Your Trading?</h2>
-                <p>Join our community of successful Kenyan traders today. Get started with a free 7-day trial.</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Call Us</h4>
-                            <a href="tel:+254787445446">+254 787 445446</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>WhatsApp</h4>
-                            <a href="https://wa.me/254787445446" target="_blank">Chat Now</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Email</h4>
-                            <a href="mailto:info@nairobfx.ac.ke">info@nairobfx.ac.ke</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Mobile toggle button -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             
-            <div class="contact-form animate-on-scroll">
-                <form id="signup-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="from_name" placeholder="Enter your name" required>
+            <!-- Desktop navigation -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown">
+                            Explore
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><h6 class="dropdown-header">Trading Categories</h6></li>
+                            <li><a class="dropdown-item" href="#">Stock Trading</a></li>
+                            <li><a class="dropdown-item" href="#">Forex Trading</a></li>
+                            <li><a class="dropdown-item" href="#">Cryptocurrency Trading</a></li>
+                            <li><a class="dropdown-item" href="#">Options Trading</a></li>
+                            <li><a class="dropdown-item" href="#">Futures Trading</a></li>
+                            <li><a class="dropdown-item" href="#">Day Trading</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Swing Trading</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex me-3">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search for courses" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="from_email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="e.g. +254 787 445446" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">Your Trading Level</label>
-                        <select id="experience" name="experience" required>
-                            <option value="">Select your level</option>
-                            <option value="beginner">Beginner</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="submit-btn">Start Free Trial <i class="fas fa-arrow-right"></i></button>
                 </form>
-                <div id="form-success" style="display: none; margin-top: 20px; color: var(--secondary);">
-                    Thank you! Your submission has been received.
+                <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#"> Pricing </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Careers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-heart"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-user-circle fs-4"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Offcanvas Navigation -->
+    <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mobileNavLabel">Bonacci Trades</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Mobile Search -->
+            <form class="offcanvas-search mb-4">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Search for courses" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            
+            <!-- Mobile Nav Items with Dropdowns -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#exploreCollapse" aria-expanded="false">
+                    <span>Explore</span>
+                </a>
+                <div class="collapse" id="exploreCollapse">
+                    <div class="dropdown-menu-mobile">
+                        <h6 class="dropdown-header">Trading Categories</h6>
+                        <a class="dropdown-item" href="#" data-bs-dismiss="offcanvas">Stock Trading</a>
+                        <a class="dropdown-item" href="#" data-bs-dismiss="offcanvas">Forex Trading</a>
+                        <a class="dropdown-item" href="#" data-bs-dismiss="offcanvas">Cryptocurrency Trading</a>
+                        <a class="dropdown-item" href="#" data-bs-dismiss="offcanvas">Options Trading</a>
+                        <a class="dropdown-item" href="#" data-bs-dismiss="offcanvas">Futures Trading</a>
+                        <a class="dropdown-item" href="#" data-bs-dismiss="offcanvas">Day Trading</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" data-bs-dismiss="offcanvas">Swing Trading</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                    <span>Pricing</span>
+                </a>
+            </div>
+            
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link" data-bs-dismiss="offcanvas">
+                    <span>Careers</span>
+                </a>
+            </div>
+            
+            <!-- Mobile Nav Icons -->
+            <div class="mobile-nav-icons">
+                <a href="#" data-bs-dismiss="offcanvas"><i class="fas fa-heart"></i></a>
+                <a href="#" data-bs-dismiss="offcanvas"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" data-bs-dismiss="offcanvas"><i class="fas fa-bell"></i></a>
+                <a href="#" data-bs-dismiss="offcanvas"><i class="fas fa-user-circle"></i></a>
+            </div>
+        </div>
+    </div>
+     
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="hero-title">Learn trading skills to advance your career</h1>
+                    <p class="hero-subtitle">Master the markets with expert-led trading courses from industry professionals. Whether you're a beginner or an experienced trader, we have courses to level up your skills.</p>
+                    <div class="search-bar input-group mb-3">
+                        <input type="text" class="form-control search-input" placeholder="What do you want to learn today?">
+                        <button class="btn search-btn" type="button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Trading charts" class="hero-bg d-none d-lg-block">
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Top categories</h2>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-card p-3 text-center">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Stock Trading" class="category-img mb-3">
+                        <h5>Stock Trading</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-card p-3 text-center">
+                        <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Forex Trading" class="category-img mb-3">
+                        <h5>Forex Trading</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-card p-3 text-center">
+                        <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Crypto Trading" class="category-img mb-3">
+                        <h5>Crypto Trading</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-card p-3 text-center">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Options Trading" class="category-img mb-3">
+                        <h5>Options Trading</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-card p-3 text-center">
+                        <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Day Trading" class="category-img mb-3">
+                        <h5>Day Trading</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="category-card p-3 text-center">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Swing Trading" class="category-img mb-3">
+                        <h5>Swing Trading</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Featured courses</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                        <div class="p-3">
+                            <span class="bestseller-badge">Bestseller</span>
+                            <h5 class="course-title">The Complete Stock Trading Course for Beginners</h5>
+                            <p class="instructor-name mb-1">John Smith</p>
+                            <div class="d-flex align-items-center mb-1">
+                                <span class="rating">4.7</span>
+                                <i class="fas fa-star text-warning ms-1"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                                <span class="rating-count ms-1">(12,345)</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="price">$84.99</span>
+                                <span class="original-price ms-2">$199.99</span>
+                                <span class="discount-badge ms-2">57% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                        <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                        <div class="p-3">
+                            <span class="bestseller-badge">Bestseller</span>
+                            <h5 class="course-title">Forex Trading A-Z: From Beginner to Advanced</h5>
+                            <p class="instructor-name mb-1">Sarah Johnson</p>
+                            <div class="d-flex align-items-center mb-1">
+                                <span class="rating">4.8</span>
+                                <i class="fas fa-star text-warning ms-1"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <span class="rating-count ms-1">(8,765)</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="price">$74.99</span>
+                                <span class="original-price ms-2">$179.99</span>
+                                <span class="discount-badge ms-2">58% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                        <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                        <div class="p-3">
+                            <span class="bestseller-badge">Bestseller</span>
+                            <h5 class="course-title">Cryptocurrency Trading Masterclass 2025</h5>
+                            <p class="instructor-name mb-1">Michael Chen</p>
+                            <div class="d-flex align-items-center mb-1">
+                                <span class="rating">4.6</span>
+                                <i class="fas fa-star text-warning ms-1"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                                <span class="rating-count ms-1">(15,432)</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="price">$89.99</span>
+                                <span class="original-price ms-2">$219.99</span>
+                                <span class="discount-badge ms-2">59% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                        <div class="p-3">
+                            <span class="bestseller-badge">Bestseller</span>
+                            <h5 class="course-title">Options Trading Strategies: The Complete Guide</h5>
+                            <p class="instructor-name mb-1">David Wilson</p>
+                            <div class="d-flex align-items-center mb-1">
+                                <span class="rating">4.5</span>
+                                <i class="fas fa-star text-warning ms-1"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                                <span class="rating-count ms-1">(6,789)</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="price">$79.99</span>
+                                <span class="original-price ms-2">$189.99</span>
+                                <span class="discount-badge ms-2">58% off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Topics -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Popular topics</h2>
+            <div class="row">
+                <div class="col-md-4 col-lg-3 mb-3">
+                    <a href="#" class="btn btn-outline-secondary w-100">Technical Analysis</a>
+                </div>
+                <div class="col-md-4 col-lg-3 mb-3">
+                    <a href="#" class="btn btn-outline-secondary w-100">Fundamental Analysis</a>
+                </div>
+                <div class="col-md-4 col-lg-3 mb-3">
+                    <a href="#" class="btn btn-outline-secondary w-100">Risk Management</a>
+                </div>
+                <div class="col-md-4 col-lg-3 mb-3">
+                    <a href="#" class="btn btn-outline-secondary w-100">Trading Psychology</a>
+                </div>
+                <div class="col-md-4 col-lg-3 mb-3">
+                    <a href="#" class="btn btn-outline-secondary w-100">Algorithmic Trading</a>
+                </div>
+                <div class="col-md-4 col-lg-3 mb-3">
+                    <a href="#" class="btn btn-outline-secondary w-100">Candlestick Patterns</a>
+                </div>
+                <div class="col-md-4 col-lg-3 mb-3">
+                    <a href="#" class="btn btn-outline-secondary w-100">TradingView</a>
+                </div>
+                <div class="col-md-4 col-lg-3 mb-3">
+                    <a href="#" class="btn btn-outline-secondary w-100">MetaTrader 4</a>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Bonaccitrades</h3>
-                <p>Kenya's premier forex education platform, offering AI-powered training tailored for African markets.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+    <!-- All Courses with Filters -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">All Trading Courses</h2>
+            
+            <!-- Filter Tabs -->
+            <ul class="nav nav-tabs mb-4" id="coursesTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">All</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="stock-tab" data-bs-toggle="tab" data-bs-target="#stock" type="button" role="tab">Stock Trading</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="forex-tab" data-bs-toggle="tab" data-bs-target="#forex" type="button" role="tab">Forex Trading</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="crypto-tab" data-bs-toggle="tab" data-bs-target="#crypto" type="button" role="tab">Cryptocurrency</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="options-tab" data-bs-toggle="tab" data-bs-target="#options" type="button" role="tab">Options Trading</button>
+                </li>
+            </ul>
+            
+            <!-- Tab Content -->
+            <div class="tab-content" id="coursesTabContent">
+                <div class="tab-pane fade show active" id="all" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                                <div class="p-3">
+                                    <span class="bestseller-badge">Bestseller</span>
+                                    <h5 class="course-title">The Complete Stock Trading Course for Beginners</h5>
+                                    <p class="instructor-name mb-1">John Smith</p>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="rating">4.7</span>
+                                        <i class="fas fa-star text-warning ms-1"></i>
+                                        <span class="rating-count ms-1">(12,345)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="price">$84.99</span>
+                                        <span class="original-price ms-2">$199.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                                <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                                <div class="p-3">
+                                    <span class="bestseller-badge">Bestseller</span>
+                                    <h5 class="course-title">Forex Trading A-Z: From Beginner to Advanced</h5>
+                                    <p class="instructor-name mb-1">Sarah Johnson</p>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="rating">4.8</span>
+                                        <i class="fas fa-star text-warning ms-1"></i>
+                                        <span class="rating-count ms-1">(8,765)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="price">$74.99</span>
+                                        <span class="original-price ms-2">$179.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                                <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                                <div class="p-3">
+                                    <span class="bestseller-badge">Premium</span>
+                                    <h5 class="course-title">Cryptocurrency Trading Masterclass 2025</h5>
+                                    <p class="instructor-name mb-1">Michael Chen</p>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="rating">4.6</span>
+                                        <i class="fas fa-star text-warning ms-1"></i>
+                                        <span class="rating-count ms-1">(15,432)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="price">$89.99</span>
+                                        <span class="original-price ms-2">$219.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                                <div class="p-3">
+                                    <span class="bestseller-badge">Bestseller</span>
+                                    <h5 class="course-title">Options Trading Strategies: The Complete Guide</h5>
+                                    <p class="instructor-name mb-1">David Wilson</p>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="rating">4.5</span>
+                                        <i class="fas fa-star text-warning ms-1"></i>
+                                        <span class="rating-count ms-1">(6,789)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="price">$79.99</span>
+                                        <span class="original-price ms-2">$189.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#" class="btn btn-outline-primary">Show all Trading courses</a>
+                    </div>
+                </div>
+                
+                <!-- Stock Trading Tab -->
+                <div class="tab-pane fade" id="stock" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                                <div class="p-3">
+                                    <span class="bestseller-badge">Bestseller</span>
+                                    <h5 class="course-title">The Complete Stock Trading Course for Beginners</h5>
+                                    <p class="instructor-name mb-1">John Smith</p>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="rating">4.7</span>
+                                        <i class="fas fa-star text-warning ms-1"></i>
+                                        <span class="rating-count ms-1">(12,345)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="price">$84.99</span>
+                                        <span class="original-price ms-2">$199.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                                <div class="p-3">
+                                    <span class="bestseller-badge">Bestseller</span>
+                                    <h5 class="course-title">Day Trading Strategies for Stocks</h5>
+                                    <p class="instructor-name mb-1">Robert Taylor</p>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="rating">4.6</span>
+                                        <i class="fas fa-star text-warning ms-1"></i>
+                                        <span class="rating-count ms-1">(9,876)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="price">$89.99</span>
+                                        <span class="original-price ms-2">$209.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Forex Trading Tab -->
+                <div class="tab-pane fade" id="forex" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                                <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                                <div class="p-3">
+                                    <span class="bestseller-badge">Bestseller</span>
+                                    <h5 class="course-title">Forex Trading A-Z: From Beginner to Advanced</h5>
+                                    <p class="instructor-name mb-1">Sarah Johnson</p>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="rating">4.8</span>
+                                        <i class="fas fa-star text-warning ms-1"></i>
+                                        <span class="rating-count ms-1">(8,765)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="price">$74.99</span>
+                                        <span class="original-price ms-2">$179.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cryptocurrency Tab -->
+                <div class="tab-pane fade" id="crypto" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                                <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                                <div class="p-3">
+                                    <span class="bestseller-badge">Premium</span>
+                                    <h5 class="course-title">Cryptocurrency Trading Masterclass 2025</h5>
+                                    <p class="instructor-name mb-1">Michael Chen</p>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="rating">4.6</span>
+                                        <i class="fas fa-star text-warning ms-1"></i>
+                                        <span class="rating-count ms-1">(15,432)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="price">$89.99</span>
+                                        <span class="original-price ms-2">$219.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Options Trading Tab -->
+                <div class="tab-pane fade" id="options" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="course-card" data-bs-toggle="popover" data-bs-trigger="hover">
+                                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Course" class="course-img w-100">
+                                <div class="p-3">
+                                    <span class="bestseller-badge">Bestseller</span>
+                                    <h5 class="course-title">Options Trading Strategies: The Complete Guide</h5>
+                                    <p class="instructor-name mb-1">David Wilson</p>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <span class="rating">4.5</span>
+                                        <i class="fas fa-star text-warning ms-1"></i>
+                                        <span class="rating-count ms-1">(6,789)</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="price">$79.99</span>
+                                        <span class="original-price ms-2">$189.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#features"><i class="fas fa-chevron-right"></i> Features</a></li>
-                    <li><a href="#courses"><i class="fas fa-chevron-right"></i> Courses</a></li>
-                    <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
-                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Courses</h3>
-                <ul>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Beginner Program</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Advanced Strategies</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Risk Management</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Technical Analysis</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Fundamental Analysis</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</a></li>
-                    <li><a href="tel:+254787445446"><i class="fas fa-phone-alt"></i> +254 787 445446</a></li>
-                    <li><a href="mailto:info@nairobfx.ac.ke"><i class="fas fa-envelope"></i> info@nairobfx.ac.ke</a></li>
-                    <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 8AM - 5PM EAT</a></li>
-                </ul>
+        </div>
+    </section>
+    
+    <!-- Top Instructors -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Top instructors</h2>
+            <div class="row">
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Instructor" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+                        <h5>John Smith</h5>
+                        <p class="text-muted">Stock Trading Expert</p>
+                        <div class="d-flex justify-content-center">
+                            <span class="rating">4.8</span>
+                            <i class="fas fa-star text-warning ms-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Instructor" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+                        <h5>Sarah Johnson</h5>
+                        <p class="text-muted">Forex Trading Specialist</p>
+                        <div class="d-flex justify-content-center">
+                            <span class="rating">4.9</span>
+                            <i class="fas fa-star text-warning ms-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Instructor" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+                        <h5>Michael Chen</h5>
+                        <p class="text-muted">Crypto Trading Guru</p>
+                        <div class="d-flex justify-content-center">
+                            <span class="rating">4.7</span>
+                            <i class="fas fa-star text-warning ms-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Instructor" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+                        <h5>David Wilson</h5>
+                        <p class="text-muted">Options Trading Pro</p>
+                        <div class="d-flex justify-content-center">
+                            <span class="rating">4.6</span>
+                            <i class="fas fa-star text-warning ms-1"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Bonaccitrades. All rights reserved. | Designed for Kenyan traders</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">What our students say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-quote-left text-muted fs-1 me-3"></i>
+                                <div>
+                                    <div class="d-flex">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                    <p class="mb-0 fw-bold">Life-changing course</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"The stock trading course completely transformed how I approach the markets. I went from losing money to consistently profitable in just 3 months!"</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=50&q=80" alt="Student" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                                <div>
+                                    <p class="mb-0 fw-bold">Emily R.</p>
+                                    <small class="text-muted">Stock Trading Student</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-quote-left text-muted fs-1 me-3"></i>
+                                <div>
+                                    <div class="d-flex">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </div>
+                                    <p class="mb-0 fw-bold">Excellent forex content</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"Sarah's forex course is the most comprehensive I've found. The risk management strategies alone were worth the price. Highly recommended!"</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=50&q=80" alt="Student" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                                <div>
+                                    <p class="mb-0 fw-bold">James L.</p>
+                                    <small class="text-muted">Forex Trading Student</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-quote-left text-muted fs-1 me-3"></i>
+                                <div>
+                                    <div class="d-flex">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star-half-alt text-warning"></i>
+                                    </div>
+                                    <p class="mb-0 fw-bold">Great crypto insights</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"Michael breaks down complex crypto concepts into easy-to-understand lessons. I've doubled my portfolio since taking his course 6 months ago."</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&auto=format&fit=crop&w=50&q=80" alt="Student" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+                                <div>
+                                    <p class="mb-0 fw-bold">Alex M.</p>
+                                    <small class="text-muted">Crypto Trading Student</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Start your trading journey today</h2>
+            <p class="mb-4 fs-5">Join over 500,000 students who have transformed their trading skills with our courses</p>
+            <button class="btn btn-light btn-lg px-4">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">BonacciTrades</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Stock Trading</a></li>
+                        <li><a href="#">Forex Trading</a></li>
+                        <li><a href="#">Cryptocurrency</a></li>
+                        <li><a href="#">Options Trading</a></li>
+                        <li><a href="#">Day Trading</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <button class="language-btn mb-3">
+                        <i class="fas fa-globe me-2"></i>English
+                    </button>
+                    <h5 class="mb-3">Connect with us</h5>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="copyright">
+                    © 2025 Bonacci Trades, Inc. All rights reserved.
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/150x50?text=Bonacci Trades+Logo" alt="Bonacci Trades Logo" style="height: 30px;">
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        // Header scroll effect
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 50) {
-                $('#header').addClass('scrolled');
-            } else {
-                $('#header').removeClass('scrolled');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        $('a[href*="#"]').on('click', function(e) {
-            e.preventDefault();
-            $('html, body').animate(
-                {
-                    scrollTop: $($(this).attr('href')).offset().top - 80,
-                },
-                500,
-                'swing'
-            );
+   <script>
+    // Initialize popovers only on desktop
+    function initPopovers() {
+        if (window.innerWidth > 991.98) {
+            const courseCards = document.querySelectorAll('.course-card[data-bs-toggle="popover"]');
+            const placements = ['top', 'bottom', 'left', 'right'];
             
-            // Close mobile menu if open
-            $('.nav-links').removeClass('active');
-            $('.mobile-menu-overlay').removeClass('active');
-        });
-        
-        // Animate elements when they come into view
-        function animateOnScroll() {
-            $('.animate-on-scroll').each(function() {
-                var position = $(this).offset().top;
-                var scroll = $(window).scrollTop();
-                var windowHeight = $(window).height();
+            courseCards.forEach(card => {
+                const randomPlacement = placements[Math.floor(Math.random() * placements.length)];
                 
-                if (scroll + windowHeight - 100 > position) {
-                    $(this).addClass('visible');
-                }
-            });
-        }
-        
-        // Count up animation for stats
-        function animateStats() {
-            $('.stat-number').each(function() {
-                var $this = $(this);
-                var countTo = $this.attr('data-count');
+                const title = card.querySelector('.course-title').textContent;
+                const instructor = card.querySelector('.instructor-name').textContent;
+                const rating = card.querySelector('.rating').textContent;
+                const ratingCount = card.querySelector('.rating-count').textContent;
+                const price = card.querySelector('.price').textContent;
+                const originalPrice = card.querySelector('.original-price').textContent;
+                const badge = card.querySelector('.bestseller-badge').textContent;
                 
-                $({ countNum: 0 }).animate({
-                    countNum: countTo
-                },
-                {
-                    duration: 2000,
-                    easing: 'swing',
-                    step: function() {
-                        $this.text(Math.floor(this.countNum));
-                    },
-                    complete: function() {
-                        $this.text(this.countNum);
-                    }
+                new bootstrap.Popover(card, {
+                    placement: randomPlacement,
+                    trigger: 'hover',
+                    html: true,
+                    container: 'body',
+                    content: `
+                        <div class="popover-content">
+                            <div class="course-badge popover-bestseller-badge">${badge}</div>
+                            <div class="updated-text">Updated August 2025</div>
+                            <div class="course-duration">12.5 total hours · All Levels · Subtitles, CC</div>
+                            <h6 class="popover-title">${title}</h6>
+                            <div class="course-features">
+                                <div class="course-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span class="course-feature-text">Master technical analysis: Learn chart patterns, indicators, and trading strategies</span>
+                                </div>
+                                <div class="course-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span class="course-feature-text">Risk management: Protect your capital with proper position sizing</span>
+                                </div>
+                                <div class="course-feature">
+                                    <i class="fas fa-check"></i>
+                                    <span class="course-feature-text">Trading psychology: Develop the mindset of successful traders</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mt-3">
+                                <span class="popover-price">${price}</span>
+                                <span class="popover-original-price">${originalPrice}</span>
+                            </div>
+                        </div>
+                    `,
+                    title: `
+                        <div class="d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold">${title}</span>
+                            </div>
+                            <div class="d-flex align-items-center mt-1">
+                                <small class="text-muted">${instructor}</small>
+                            </div>
+                            <div class="d-flex align-items-center mt-1">
+                                <span class="rating">${rating}</span>
+                                <i class="fas fa-star text-warning ms-1"></i>
+                                <span class="rating-count ms-1">${ratingCount}</span>
+                            </div>
+                        </div>
+                    `
+                });
+                
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'all 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
                 });
             });
         }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        initPopovers();
         
-        // Check if stats are in view
-        function checkStats() {
-            var statsPosition = $('.stats').offset().top;
-            var scroll = $(window).scrollTop();
-            var windowHeight = $(window).height();
-            
-            if (scroll + windowHeight > statsPosition + 100) {
-                animateStats();
-                $(window).off('scroll', checkStats);
-            }
-        }
-        
-        // Initialize animations
-        $(document).ready(function() {
-            animateOnScroll();
-            $(window).on('scroll', animateOnScroll);
-            $(window).on('scroll', checkStats);
-            
-            // Typing animation for hero section
-            const typedText = document.querySelector('.typed-text');
-            const words = ["For Kenyan Markets", "With Local Insights", "Tailored For You"];
-            let wordIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
-            let isEnd = false;
-            
-            function type() {
-                const currentWord = words[wordIndex];
-                
-                if (isDeleting) {
-                    typedText.textContent = currentWord.substring(0, charIndex - 1);
-                    charIndex--;
-                } else {
-                    typedText.textContent = currentWord.substring(0, charIndex + 1);
-                    charIndex++;
-                }
-                
-                if (!isDeleting && charIndex === currentWord.length) {
-                    isEnd = true;
-                    isDeleting = true;
-                    setTimeout(type, 1500);
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    wordIndex = (wordIndex + 1) % words.length;
-                    setTimeout(type, 500);
-                } else {
-                    const speed = isDeleting ? 50 : 150;
-                    setTimeout(type, speed);
-                }
-            }
-            
-            setTimeout(type, 1000);
-            
-            // Animate market ticker prices
-            function animatePrices() {
-                document.querySelectorAll('.ticker-item:not(.highlight)').forEach(item => {
-                    const priceElement = item.querySelector('div');
-                    if (priceElement) {
-                        const currentPrice = parseFloat(priceElement.textContent.split(' ')[0]);
-                        const fluctuation = (Math.random() * 0.5 - 0.25);
-                        const newPrice = (currentPrice + fluctuation).toFixed(2);
-                        
-                        // Determine if price went up or down
-                        if (newPrice > currentPrice) {
-                            priceElement.className = 'price-up';
-                            priceElement.innerHTML = `${newPrice} <i class="fas fa-caret-up"></i>`;
-                        } else {
-                            priceElement.className = 'price-down';
-                            priceElement.innerHTML = `${newPrice} <i class="fas fa-caret-down"></i>`;
-                        }
-                    }
-                });
-            }
-            
-            setInterval(animatePrices, 3000);
-
-            // Mobile menu toggle
-            $('.mobile-menu-btn').on('click', function() {
-                $('.nav-links').toggleClass('active');
-                $('.mobile-menu-overlay').toggleClass('active');
-            });
-
-            // Close mobile menu when clicking outside
-            $(document).on('click', function(e) {
-                if (!$(e.target).closest('.nav-links, .mobile-menu-btn').length) {
-                    $('.nav-links').removeClass('active');
-                    $('.mobile-menu-overlay').removeClass('active');
-                }
-            });
-
-            // Initialize EmailJS with placeholder credentials
-            emailjs.init('pYG1J20sEWj7MlWkJ'); //  public key
-            
-            // Form submission with EmailJS
-            $('#signup-form').on('submit', function(e) {
-                e.preventDefault();
-                
-                // Show loading state
-                const submitBtn = $(this).find('button[type="submit"]');
-                submitBtn.html('<i class="fas fa-spinner fa-spin"></i> Sending...');
-                submitBtn.prop('disabled', true);
-                
-                // Send form data using EmailJS
-                emailjs.sendForm(
-                    'service_u4i1zh6', //  service ID
-                    'template_mstpmng', // template ID
-                    this
-                ).then(
-                    function(response) {
-                        // Success actions
-                        $('#form-success').show();
-                        $('#signup-form')[0].reset();
-                        submitBtn.html('Start Free Trial <i class="fas fa-arrow-right"></i>');
-                        submitBtn.prop('disabled', false);
-                    },
-                    function(error) {
-                        // Error actions
-                        alert('Error: ' + error.text);
-                        submitBtn.html('Start Free Trial <i class="fas fa-arrow-right"></i>');
-                        submitBtn.prop('disabled', false);
-                    }
-                );
-            });
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                initPopovers();
+            }, 250);
         });
-    </script>
+
+        // Search functionality placeholder
+        const searchBtn = document.querySelector('.search-btn');
+        const searchInput = document.querySelector('.search-input');
+        searchBtn.addEventListener('click', function() {
+            if(searchInput.value.trim() !== '') {
+                alert(`Searching for: ${searchInput.value}`);
+            }
+        });
+        searchInput.addEventListener('keypress', function(e) {
+            if(e.key === 'Enter' && this.value.trim() !== '') {
+                alert(`Searching for: ${this.value}`);
+            }
+        });
+    });
+</script>
 </body>
 </html>
